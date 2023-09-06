@@ -5,10 +5,9 @@
 # Simdev
 *더 간편하고 더 쉽게*
 
-Simdev는 `Simple Devtool`이란 뜻을 가지며, `Java Project Generator`입니다. <br/>
-Dwk0910이 Github에 올리는 거의 모든 프로젝트는 Simdev를 통해 개발됩니다.
+Simdev는 `Simple Devtool`이란 뜻을 가진 `Java Project Generator`입니다. <br/>
 
-Simdev는 이전의 다른 devtool과는 **훨씬 간단하고 쉽게** 사용이 가능하며 <br/>
+Simdev는 이전의 다른 devtool과는 다르게 **훨씬 간단하고 쉽게** 사용이 가능하며 <br/>
 누구나 사용가능하고, 배포도 쉽게 할 수 있도록 설계했습니다.
 
 ## How to use
@@ -80,14 +79,12 @@ java -jar {FileName}.jar
 ## How to use Library
 Simdev에서는 lib폴더에 직접 JAR파일을 넣는 방식을 채택하고 있습니다.<br/>
 따라서 library를 사용할 예정이라면 JAR파일을 받아서, lib폴더 아래에 풀기만 하면 실행, 빌드, 배포할때에 언제든지 사용이 가능합니다.<br/>
-(IDE에서는 따로 설정을 해줘야 합니다)
+(IDE에서의 오류는 프로젝트 설정을 해줘야 해결됩니다)
 
 # Final
 자바의 다른 Devtool에 익숙하지 않고 어려운 분들이 쉽게 접할 수 있도록 최선을 다해서 설계, 제작하였습니다.<br/>
 버그나 불편사항 등 제보는 언제나 환영이랍니다: <br/>
 `Discord / Dwk0910#4491` (1인개발이므로 반영이 상당히 느릴 수 있습니다. 양해바랍니다.)
-
-TMI: Simdev도 Simdev시스템으로 개발된 것이랍니다.
 
 ***Thanks for reading!***<br/>
 *Copyright 2023. Dwk0910 All rights reserved.*
