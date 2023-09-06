@@ -87,5 +87,7 @@ Simdev에서는 lib폴더에 직접 JAR파일을 넣는 방식을 채택하고 �
 버그나 불편사항 등 제보는 언제나 환영이랍니다: <br/>
 `Discord / Dwk0910#4491` (1인개발이므로 반영이 상당히 느릴 수 있습니다. 양해바랍니다.)
 
+TMI: Simdev도 Simdev시스템으로 개발된 것이랍니다.
+
 ***Thanks for reading!***<br/>
 *Copyright 2023. Dwk0910 All rights reserved.*
