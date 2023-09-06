@@ -65,11 +65,11 @@ Simdev에서는 언제든지 테스트를 쉽게 할 수 있습니다. 그저 `r
 
 ### BUILD
 Simdev에서의 build는 매 파일들마다 알아서 실행됩니다.<br/>
-build도 run과 마찬가지로 파일 한번만 실행하면 알아서 귀찮은 작업들을 대신 해주고, 빌드하도록 설계했습니다.
+build도 run과 마찬가지로 파일 한번만 실행하면 손쉽게 빌드되도록 설계했습니다.
 
 ### PUBLISH
 Simdev에서는 쉬운 배포를 위해 `Runnable JAR File` 만들기 기능을 지원합니다<br/>
-`makeJar`파일을 실행하게 되면 Simdev는 `MANIFEST.MF`, classpath 등 귀찮은 작업들을 대신해주고,<br/>
+`makeJar`파일을 실행하게 되면 Simdev는 `MANIFEST.MF` 생성, classpath추가 등의 작업을 해주고,<br/>
 `Runnable JAR File`을 `jarFiles`폴더 아래에 만들게 됩니다.<br/>
 이떄 만들어진 JAR 파일은 `Runnable JAR File` 이므로 아래의 명렁어만 넣으면 실행 할 수 있답니다.
 
