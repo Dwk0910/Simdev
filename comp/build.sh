@@ -1,0 +1,1 @@
+javac ./../Simdev/*.java -cp ./../lib/*: -d ./../classes
