@@ -1,0 +1,11 @@
+.idea
+.idea/vcs.xml
+
+/build
+/gradle
+/.gradle
+gradlew
+
+build.gradle
+gradlew.bat
+settings.gradle
