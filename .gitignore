@@ -9,3 +9,7 @@ gradlew
 build.gradle
 gradlew.bat
 settings.gradle
+
+.DS_Store
+test.sh
+/testdir
