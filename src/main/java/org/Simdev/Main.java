@@ -17,11 +17,9 @@ public class Main {
     public static void main(String[] args) {
         String os_pr = System.getProperty("os.name").toLowerCase();
         String os;
-        if (os_pr.contains("win")) {
-            os = "windows";
-        } else {
-            os = "unix";
-        }
+
+        if (os_pr.contains("win")) os = "windows";
+        else os = "unix";
 
         JSONParser parser = new JSONParser();
         List<Object> history = new ArrayList<>();
@@ -31,14 +29,9 @@ public class Main {
         File history_f = new File(data_dir + File.separator + "projects.dat");
 
         try {
-            if (!data_dir_f.exists() && !data_dir_f.mkdirs()) {
-                throw new IOException();
-            }
-
+            if (!data_dir_f.exists() && !data_dir_f.mkdirs()) throw new IOException();
             if (!history_f.exists()) {
-                if (!history_f.createNewFile()) {
-                    throw new IOException();
-                }
+                if (!history_f.createNewFile()) throw new IOException();
 
                 FileWriter writer = new FileWriter(history_f);
                 writer.write("[]");
