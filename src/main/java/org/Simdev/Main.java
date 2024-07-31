@@ -28,6 +28,8 @@ public class Main {
         File data_dir_f = new File(data_dir);
         File history_f = new File(data_dir + File.separator + "projects.dat");
 
+        String filename = history_f.getName();
+
         try {
             if (!data_dir_f.exists() && !data_dir_f.mkdirs()) throw new IOException();
             if (!history_f.exists()) {
@@ -39,20 +41,17 @@ public class Main {
                 writer.close();
             }
         } catch (IOException e) {
-            System.out.println(PrintMessage.get("알 수 없는 오류가 발생했습니다. (IOException)", "error"));
-            System.exit(-1);
+            PrintMessage.Crash("0001A, 0001C", filename);
         }
 
         try {
             FileReader reader = new FileReader(history_f);
-            JSONArray array = (JSONArray)parser.parse(reader);
+            JSONArray array = (JSONArray) parser.parse(reader);
             history.addAll(array);
         } catch (IOException e) {
-            System.out.println(PrintMessage.get("알 수 없는 오류가 발생했습니다. (IOException)", "error"));
-            System.exit(-1);
+            PrintMessage.Crash("0001B", filename);
         } catch (ParseException e) {
-            System.out.println(PrintMessage.get("알 수 없는 오류가 발생했습니다. (ParseException)", "error"));
-            System.exit(-1);
+            PrintMessage.Crash("0001D", filename);
         }
 
         Simdev cls = new Simdev();
