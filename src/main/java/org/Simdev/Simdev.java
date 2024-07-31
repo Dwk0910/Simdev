@@ -32,6 +32,7 @@ public class Simdev {
             System.out.print(ColorText.text(" : ", "yellow", "none", true));
 
             String select = scan.nextLine();
+            MiniUtils.clearConsole();
             switch (select) {
                 case "1" -> {
                     /*
