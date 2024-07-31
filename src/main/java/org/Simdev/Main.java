@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.Simdev.util.PrintMessage;
+import org.Simdev.util.MiniUtils;
 
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
@@ -51,6 +52,9 @@ public class Main {
         } catch (IOException | ParseException e) {
             PrintMessage.Crash(e.getClass().getName().split("\\.")[e.getClass().getName().split("\\.").length - 1].equalsIgnoreCase("IOException") ? "0001B" : "0001D", filename);
         }
+
+        System.out.println(PrintMessage.get("파일 검사가 완료되었습니다.", "info"));
+        MiniUtils.clearConsole();
 
         Simdev cls = new Simdev();
         cls.run(os, history);
