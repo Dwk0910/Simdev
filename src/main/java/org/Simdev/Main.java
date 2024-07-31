@@ -48,10 +48,8 @@ public class Main {
             FileReader reader = new FileReader(history_f);
             JSONArray array = (JSONArray) parser.parse(reader);
             history.addAll(array);
-        } catch (IOException e) {
-            PrintMessage.Crash("0001B", filename);
-        } catch (ParseException e) {
-            PrintMessage.Crash("0001D", filename);
+        } catch (IOException | ParseException e) {
+            PrintMessage.Crash(e.getClass().getName().split("\\.")[e.getClass().getName().split("\\.").length - 1].equalsIgnoreCase("IOException") ? "0001B" : "0001D", filename);
         }
 
         Simdev cls = new Simdev();
