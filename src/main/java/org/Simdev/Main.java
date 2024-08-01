@@ -11,11 +11,14 @@ import org.Simdev.util.PrintMessage;
 import org.Simdev.util.MiniUtils;
 
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println(PrintMessage.get("Simdev 실행 파일을 검사합니다...", "info"));
+
         String os_pr = System.getProperty("os.name").toLowerCase();
         String os;
 
@@ -23,7 +26,7 @@ public class Main {
         else os = "unix";
 
         JSONParser parser = new JSONParser();
-        List<Object> history = new ArrayList<>();
+        List<JSONObject> history = new ArrayList<>();
         String current_dir = System.getProperty("user.dir");
         String data_dir = current_dir + File.separator + "data";
         File data_dir_f = new File(data_dir);
@@ -48,7 +51,7 @@ public class Main {
         try {
             FileReader reader = new FileReader(history_f);
             JSONArray array = (JSONArray) parser.parse(reader);
-            history.addAll(array);
+            for (Object o : array) history.add((JSONObject) o);
         } catch (IOException | ParseException e) {
             PrintMessage.Crash(e.getClass().getName().split("\\.")[e.getClass().getName().split("\\.").length - 1].equalsIgnoreCase("IOException") ? "0001B" : "0001D", filename);
         }
