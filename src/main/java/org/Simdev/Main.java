@@ -45,7 +45,7 @@ public class Main {
                 writer.close();
             }
         } catch (IOException e) {
-            PrintMessage.Crash("0001A, 0001C", filename);
+            PrintMessage.Error(0, "0001A, D-0001C", filename);
         }
 
         try {
@@ -53,7 +53,9 @@ public class Main {
             JSONArray array = (JSONArray) parser.parse(reader);
             for (Object o : array) history.add((JSONObject) o);
         } catch (IOException | ParseException e) {
-            PrintMessage.Crash(e.getClass().getName().split("\\.")[e.getClass().getName().split("\\.").length - 1].equalsIgnoreCase("IOException") ? "0001B" : "0001D", filename);
+            PrintMessage.Error(0, e.getClass().getName().split("\\.")[e.getClass().getName().split("\\.").length - 1].equalsIgnoreCase("IOException") ? "0001B" : "0001D", filename);
+        } catch (ClassCastException e) {
+            PrintMessage.Error(0, "0001D", filename);
         }
 
         System.out.println(PrintMessage.get("파일 검사가 완료되었습니다.", "info"));

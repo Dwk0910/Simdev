@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import org.Simdev.object.Project;
+
 import org.Simdev.util.ColorText;
 import org.Simdev.util.MiniUtils;
 import org.Simdev.util.PrintMessage;
@@ -40,12 +41,13 @@ public class Simdev {
             MiniUtils.clearConsole();
             switch (select) {
                 case "1" -> {
+                    System.out.println(PrintMessage.get("프로젝트 목록을 불러옵니다...", "info"));
                     /*
                     About history object (JSONObject) :
 
                     {
                         "name": "projectname",
-                        "last-open": "0000-00-00",
+                        "date": "0000-00-00",
                         "location": "/~~~/~~~/~~~/$projectname.devinf"
                     }
 
@@ -81,6 +83,8 @@ public class Simdev {
                      * 3 ~ 10 index (2-2 nullS, E) *
                      */
 
+                    int[][] nullList = {{5, 6}, {5, 5}, {4, 5}, {4, 4}};
+
                     Map<Integer, JSONObject> map = new HashMap<>();
                     int i = 1;
                     for (JSONObject o : history) {
@@ -90,20 +94,8 @@ public class Simdev {
                     do {
                         for (Integer key : map.keySet()) {
                             JSONObject value = map.get(key);
-                            int nullS = 0, nullE = 0;
-                            if (key.toString().length() == 1) {
-                                nullS = 5;
-                                nullE = 6;
-                            } else if (key.toString().length() == 2) {
-                                nullS = 5;
-                                nullE = 5;
-                            } else if (key.toString().length() == 3) {
-                                nullS = 4;
-                                nullE = 5;
-                            } else if (key.toString().length() == 4) {
-                                nullS = 4;
-                                nullE = 4;
-                            }
+                            int[] nullList_key = nullList[key.toString().length() - 1];
+                            int nullS = nullList_key[0], nullE = nullList_key[1];
 
                             String oName = map.get(key).get("name").toString();
                             String name = oName.length() <= 42 ? oName : oName.substring(0, 41) + "...";
