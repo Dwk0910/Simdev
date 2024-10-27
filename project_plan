@@ -1,0 +1,35 @@
+gradle library 가져오는 법.
+
+gradle syntax : 
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+library url :
+
+https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar
+
+
+원리 :
+"."을 모두 "/(경로)"로 변경한 뒤 ":" 뒤에 있는 버전명 작성. 이후 split(":") 기준 "<[1]번 인덱스 내용>-<버전>.jar"
+
+ex: https://repo1.maven.org/maven2/<두번째 ":"전까지의 모든 경로>/[1]번 인덱스 내용/<인덱스내용-버전.jar>
+
+예를 들어 org.simdev.library:libraryname:5.19.2
+=> https://repo1.maven.org/maven2/org/simdev/library/libraryname/5.19.2/libraryname-5.19.2.jar
+인것임.
+
+library가 relocated 상태일 경우 .pom 파일만 남아있기 때문에 .jar파일 다운로드 시도시 404 error가 뜰 수 있음.
+따라서 다운로드 실패시 출력 메시지에 'library가 relocated 상태일 수도 있으니 확인하라.' 라는 내용이 필요함.
+(.pom파일에 relocate라고 적혀있고, 어떤 library로 relocate 됐는지 확인 가능하나, 많이 까다롭다.)
+(사례 : slf4j-log4j12 >>> slf4j-reload4j (relocated) : 해당 .pom파일에 정보 유무 확인하였음.)
+
+
+
+
+
++---------+---------------------------------------+
+| [Index] |   [Date]   |      [Project Name]      |
++---------+---------------------------------------+
+|    1    |  24.09.10  |       Test Project       |
++---------+---------------------------------------+
+|    2    |  25.12.10  |       Happy Coding!      |
++---------+---------------------------------------+

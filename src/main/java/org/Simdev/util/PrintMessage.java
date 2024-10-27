@@ -1,6 +1,7 @@
 package org.Simdev.util;
 
 public class PrintMessage {
+    // Message Print Method
     public static String get(String message, String type) {
         String color = "";
 
@@ -35,8 +36,8 @@ public class PrintMessage {
     ㄴ * 추가예정 *
 
     */
-
-    public static void Error(int type, String errorcode, String cause) {
+    // Error Print Mehod
+    public static void Error(int type, String errorcode, String cause, Boolean... waitsec) {
         switch (type) {
             case 0 -> {
                 System.out.println(PrintMessage.get("치명적인 오류가 발생하여 종료합니다. (Code " + ColorText.text("D-" + errorcode, "yellow", "none", true) + ColorText.text(") : ", "white", "none", true) + cause, "error"));
@@ -44,24 +45,22 @@ public class PrintMessage {
             }
 
             case 1 -> {
-                try {
-                    System.out.println(PrintMessage.get("오류가 발생했습니다. (Code " + ColorText.text("G-" + errorcode, "yellow", "none", true) + ColorText.text(") : ", "white", "none", true) + cause, "error"));
+                System.out.println(PrintMessage.get("오류가 발생했습니다. (Code " + ColorText.text("G-" + errorcode, "yellow", "none", true) + ColorText.text(") : ", "white", "none", true) + cause, "error"));
+                if (waitsec[0] != null) {
                     System.out.print(
                             ColorText.text("[ ", "gray", "none", false) +
-                                    ColorText.text("이전 화면으로 돌아가기까지.. ", "green", "none", false) +
-                                    ColorText.text("6", "red", "none", true) +
-                                    ColorText.text(" ]", "gray", "none", false)
+                            ColorText.text("이전 화면으로 돌아가기까지.. ", "green", "none", false) +
+                            ColorText.text("6", "red", "none", true) +
+                            ColorText.text(" ]", "gray", "none", false)
                     );
 
                     for (int i = 5; i >= 0; i--) {
-                        Thread.sleep(1000);
+                        MiniUtils.pause(1000);
                         System.out.print("\b\b\b" +
-                                ColorText.text(Integer.toString(i), "red", "none", true) +
-                                ColorText.text(" ]", "gray", "none", false)
+                            ColorText.text(Integer.toString(i), "red", "none", true) +
+                            ColorText.text(" ]", "gray", "none", false)
                         );
                     }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
             }
         }

@@ -52,10 +52,10 @@ public class Simdev {
                     }
 
                      */
-                    if (history.size() == 0) {
+                    if (history.isEmpty()) {
                         try {
                             System.out.println(PrintMessage.get("표시할 최근 프로젝트가 없습니다.", "error"));
-                            Thread.sleep(1500);
+                            MiniUtils.pause(1500);
                             MiniUtils.clearConsole();
                             continue;
                         } catch (InterruptedException e) {
@@ -73,7 +73,7 @@ public class Simdev {
                      2자릿수 : 5-5
                      3자릿수 : 4-5
                      4자릿수 : 4-4
-                     9999 이상은 거부
+                     10000 이상은 거부
 
                      date -> 00.00.00
                      12345678 즉, length = 8
@@ -88,9 +88,11 @@ public class Simdev {
                     Map<Integer, JSONObject> map = new HashMap<>();
                     int i = 1;
                     for (JSONObject o : history) {
+                        if (i >= 10000) continue;
                         map.put(i, o);
                         i++;
                     }
+
                     do {
                         for (Integer key : map.keySet()) {
                             JSONObject value = map.get(key);

@@ -27,7 +27,7 @@ public class ColorText {
             case "b-cyan" -> result = Ansi.ansi().fgBrightCyan();
         }
 
-        if (background.length() != 0) {
+        if (!background.isEmpty()) {
             switch (background) {
                 case "red" -> result = result.bgRed();
                 case "green" -> result = result.bgGreen();

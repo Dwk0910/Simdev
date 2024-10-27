@@ -15,4 +15,12 @@ public class MiniUtils {
             System.out.println();
         }
     }
+
+    public static void pause(int milisec) {
+        try {
+            Thread.sleep(milisec);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
