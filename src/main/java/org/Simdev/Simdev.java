@@ -53,14 +53,10 @@ public class Simdev {
 
                      */
                     if (history.isEmpty()) {
-                        try {
-                            System.out.println(PrintMessage.get("표시할 최근 프로젝트가 없습니다.", "error"));
-                            MiniUtils.pause(1500);
-                            MiniUtils.clearConsole();
-                            continue;
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        System.out.println(PrintMessage.get("표시할 최근 프로젝트가 없습니다.", "error"));
+                        MiniUtils.pause(1500);
+                        MiniUtils.clearConsole();
+                        continue;
                     }
 
                     // Print graph of projects
