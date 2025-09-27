@@ -1,0 +1,12 @@
+{
+    "name": "Test Project 4",
+    "package": "abc.def",
+    "classPath": [".", "$dir/library"],
+    "version": "0.0.0",
+    "libraries": [
+        "abc.def.hij.kln:0.0.0",
+        "mop.qrs.tuv.wxy:0.0.0"
+    ],
+    "sets_local_lib_name": "library (default:lib)",
+    "sets_jar_name": "JARFILE_$version"
+}

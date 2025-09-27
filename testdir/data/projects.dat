@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Test Project 1",
+        "date": "24.09.10",
+        "location": "~/Documents/Coding/personal/project/devinf.dat"
+    },
+    {
+        "name": "Test Project 2",
+        "date": "24.04.01",
+        "location": "~/Documents/Coding/personal/project/devinf.dat"
+    },
+    {
+        "name": "Test Project 3",
+        "date": "24.09.10",
+        "location": "~/Documents/Coding/personal/project/devinf.dat"
+    },
+    {
+        "name": "Test project 4",
+        "date": "10.09.10",
+        "location": "/Users/dongwan/Documents/Coding/personal/Simdev/testdir/project/devinf.dat"
+    }
+]
